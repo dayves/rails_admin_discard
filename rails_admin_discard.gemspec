@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version     = RailsAdminDiscard::VERSION
   spec.authors     = ["Dayves"]
   spec.email       = ["dayves.dias@gmail.com"]
-  spec.homepage    = "https://jera.com.br"
+  spec.homepage    = "https://github.com/dayves/rails_admin_discard"
   spec.summary     = "A poor implementation of custom actions of rails admin to use discard gem."
   spec.description = "A poor implementation of custom actions of rails admin to use discard gem."
   spec.license     = "MIT"
