@@ -1,0 +1,11 @@
+
+en:
+  admin:
+    actions:
+      discard:
+        title: "Discard"
+        menu: "Discard for %{model_label} '%{object_label}'"
+        breadcrumb: "Discard"
+        link: "Discard"
+        bulk_link: "Discard selected %{model_label_plural}"
+        done: "Discarded"
