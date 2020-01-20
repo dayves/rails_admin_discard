@@ -1,8 +1,31 @@
 # RailsAdminDiscard
-Short description and motivation.
+A poor implementation of custom actions of rails admin to use discard gem.
 
 ## Usage
-How to use my plugin.
+In your `rails_admin.rb`
+```ruby
+  config.actions do
+    discard
+  end
+```
+
+You may need to use in specific models:
+```ruby
+  config.actions do
+    discard do
+      only [YourModel]
+    end
+  end
+```
+
+if you want to remove delete:
+```ruby
+  config.actions do
+    delete do
+      except [YourModel]
+    end
+  end
+```
 
 ## Installation
 Add this line to your application's Gemfile:
