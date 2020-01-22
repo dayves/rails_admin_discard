@@ -9,4 +9,4 @@ en:
         link: "Discard"
         bulk_link: "Discard selected %{model_label_plural}"
         done: "Discarded"
-        cant_remove: "%{model_label} already been deleted, can`t be deleted again"
+        unremoved: "%{model_label} has rolled back"

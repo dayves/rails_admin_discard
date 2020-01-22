@@ -37,7 +37,8 @@ module RailsAdmin
             if request.get? # DELETE
 
               if @object.discarded?
-                flash[:error] = t('admin.discard.cant_remove', model_label: @model_config.label)
+                flash[:error] = t('admin.discard.unremoved', model_label: @model_config.label)
+                @object.undiscard
 
                 redirect_to index_path
               else
