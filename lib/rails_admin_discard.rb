@@ -36,14 +36,21 @@ module RailsAdmin
           proc do
             if request.get? # DELETE
 
-              respond_to do |format|
-                format.html { render @action.template_name }
-                format.js   { render @action.template_name, layout: false }
-              end
+              if @object.discarded?
+                flash[:error] = t('admin.discard.cant_remove', model_label: @model_config.label)
 
+                redirect_to index_path
+              else
+                respond_to do |format|
+                  format.html { render @action.template_name }
+                  format.js   { render @action.template_name, layout: false }
+                end  
+              end
             elsif request.delete? # DESTROY
               redirect_path = nil
               @auditing_adapter && @auditing_adapter.delete_object(@object, @abstract_model, _current_user)
+              
+
               if @object.discard
                 flash[:success] = t('admin.flash.successful', name: @model_config.label, action: t('admin.actions.delete.done'))
                 redirect_path = index_path
